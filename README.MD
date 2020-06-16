@@ -1,8 +1,10 @@
 # SpringBoot-One 
 ---
-![img](https://img.shields.io/badge/Mybatis--blue.svg)
+![img](https://img.shields.io/badge/Mybatis-blue.svg)
+![img](https://img.shields.io/badge/Lombok-ps.svg)
 ![img](https://img.shields.io/badge/SpringBoot-2.2.7.RELEASE-green.svg)
 ![img](https://img.shields.io/badge/Mysql-5.7-red.svg)
+
 
 ---
 ## 技术选型
