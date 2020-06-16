@@ -1,0 +1,26 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /one
+
+#alibaba的druid数据库连接池配置
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+        url: jdbc:mysql://localhost:3306/spb_one?useUnicode=true&characterEncoding=utf8   #生产读写分离
+        username: root
+        password: 123456
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+logging:
+  config: classpath:logback.xml
+
+
+
+
