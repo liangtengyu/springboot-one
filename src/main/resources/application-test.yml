@@ -6,16 +6,31 @@ server:
 #alibaba的druid数据库连接池配置
 spring:
     datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://localhost:3306/spb_one?useUnicode=true&characterEncoding=utf8   #生产读写分离
-        username: root
-        password: 123456
-
+      dynamic:
+        primary: master
+        datasource:
+          master:
+            driver-class-name: com.mysql.jdbc.Driver
+            type: com.alibaba.druid.pool.DruidDataSource
+            url: jdbc:mysql://localhost:3306/spb_one?useUnicode=true&characterEncoding=utf8   #master库
+            username: root
+            password: 123456
+          slave:
+            driver-class-name: com.mysql.jdbc.Driver
+            type: com.alibaba.druid.pool.DruidDataSource
+            url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8   #从库
+            username: root
+            password: 123456
+         #slave_2:
+         #  driver-class-name: com.mysql.jdbc.Driver
+         #  type: com.alibaba.druid.pool.DruidDataSource
+         #  url: jdbc:mysql://localhost:3306/xxxx?useUnicode=true&characterEncoding=utf8   #数据源3
+         #  username: root
+         #  password: 123456
 mybatis:
-  mapper-locations: classpath:mapping/*.xml
+  mapper-locations: classpath:mapping/*/*.xml
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #将sql日志输出到控制台
 
 
 logging:

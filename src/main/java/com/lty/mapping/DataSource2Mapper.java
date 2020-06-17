@@ -9,8 +9,8 @@ import java.util.Map;
 
 @Repository
 @Mapper
-@DS("master")
-public interface UserMapper {
-    public List<Map<String,Object>> getAllUser();
+@DS("slave")
+public interface DataSource2Mapper {
+    public List<Map<String,Object>> getall();
 
 }

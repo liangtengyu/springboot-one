@@ -16,8 +16,13 @@ public class UserController {
     private UserService userService;
 
 
+
     @RequestMapping(value = "/getAllUserTest")
     public List<Map<String, Object>> t() throws Exception{
         return userService.getAllUser();
+    }
+    @RequestMapping(value = "/getall")
+    public List<Map<String, Object>> getall() throws Exception{
+        return userService.getall();
     }
 }
