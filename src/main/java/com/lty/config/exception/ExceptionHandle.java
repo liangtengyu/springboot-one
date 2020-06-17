@@ -1,7 +1,7 @@
-package com.lty.exception;
+package com.lty.config.exception;
 
-import com.lty.pojo.Result;
-import com.lty.util.ResultUtil;
+import com.lty.entity.Result;
+import com.lty.config.util.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;

@@ -1,4 +1,4 @@
-package com.lty.aspect;
+package com.lty.config.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

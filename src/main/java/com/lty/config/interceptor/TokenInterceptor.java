@@ -1,5 +1,5 @@
 
-package com.lty.interceptor;
+package com.lty.config.interceptor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

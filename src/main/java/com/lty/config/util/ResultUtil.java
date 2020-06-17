@@ -1,6 +1,6 @@
-package com.lty.util;
+package com.lty.config.util;
 
-import com.lty.pojo.Result;
+import com.lty.entity.Result;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

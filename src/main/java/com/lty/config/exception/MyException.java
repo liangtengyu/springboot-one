@@ -1,4 +1,4 @@
-package com.lty.exception;
+package com.lty.config.exception;
 
 /**
  *      自定义异常:

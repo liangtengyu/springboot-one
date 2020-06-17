@@ -1,4 +1,4 @@
-package com.lty.pojo;
+package com.lty.entity;
 
 
 public class Result {

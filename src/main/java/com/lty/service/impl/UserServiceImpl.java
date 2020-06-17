@@ -1,7 +1,7 @@
 package com.lty.service.impl;
 
-import com.lty.mapping.DataSource2Mapper;
-import com.lty.mapping.UserMapper;
+import com.lty.dao.DataSource2Mapper;
+import com.lty.dao.UserMapper;
 import com.lty.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.lty.task;
+package com.lty.config.task;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

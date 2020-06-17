@@ -1,4 +1,4 @@
-package com.lty.util;
+package com.lty.config.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
