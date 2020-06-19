@@ -27,15 +27,34 @@ spring:
          #  url: jdbc:mysql://localhost:3306/xxxx?useUnicode=true&characterEncoding=utf8   #数据源3
          #  username: root
          #  password: 123456
-mybatis:
-  mapper-locations: classpath:mapping/*/*.xml
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #将sql日志输出到控制台
-
+    aop:
+      proxy-target-class: true
 
 logging:
   config: classpath:logback.xml
 
 
 
+mybatis-plus:
+  global-config:
+    banner: false
+  mapper-locations: classpath:mapping/*/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+
+one:
+  # 是否异步记录用户操作日志
+  openAopLog: true
+  # 单次最大批量入库数量
+  max:
+    batch:
+      insert:
+        num: 1000
+  shiro:
+    #项目名
+    projectName: /one
+    # 后端免认证接口 url
+    anonUrl: /swagger-resources,/v2/**,/webjars/**,/login,/logout/**,/regist,/user/check/**,/doc.html,/getCaptcha,/test,/sale/**,/amount/**,/report/**,/park/**
+    # token有效期，单位秒
+    jwtTimeOut: 86400

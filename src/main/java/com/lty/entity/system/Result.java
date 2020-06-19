@@ -1,4 +1,4 @@
-package com.lty.entity;
+package com.lty.entity.system;
 
 
 public class Result {

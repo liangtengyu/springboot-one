@@ -1,5 +1,7 @@
 package com.lty;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -12,6 +14,7 @@ import org.springframework.web.filter.CorsFilter;
 
 @SpringBootApplication
 @EnableScheduling  //允许支持schedule
+@MapperScan(basePackages = "com.lty.dao.*")
 public class App extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {

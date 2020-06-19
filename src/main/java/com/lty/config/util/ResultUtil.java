@@ -1,6 +1,6 @@
 package com.lty.config.util;
 
-import com.lty.entity.Result;
+import com.lty.entity.system.Result;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -18,14 +18,13 @@ public class ResultUtil {
      * @return
      */
     public static Result
-    requestSuccess(String data) throws Exception{
+    requestSuccess(Object data) {
         Result result = new Result();
         result.setCode("00");
         result.setMsg(REQUEST_SUCCESS);
         if(data==null||data.equals("")){
             result.setData("");
         }else{
-            data = URLEncoder.encode(data,"UTF-8");
             result.setData(data);
         }
         return  result;
@@ -36,7 +35,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result requestSuccess(String data,String msg) throws Exception{
+    public static Result requestSuccess(Object data,String msg) throws Exception{
         Result result = new Result();
         result.setCode("00");
         return checkSuccess(data, msg, result);
@@ -47,7 +46,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result requestSuccess(String data,String msg,String code) throws Exception{
+    public static Result requestSuccess(Object data,String msg,String code) throws Exception{
         Result result = new Result();
         if(code==null||"".equals(code)){
             result.setCode("00");
@@ -57,7 +56,7 @@ public class ResultUtil {
         return checkSuccess(data, msg, result);
     }
 
-    private static Result checkSuccess(String data, String msg, Result result) throws UnsupportedEncodingException {
+    private static Result checkSuccess(Object data, String msg, Result result) throws UnsupportedEncodingException {
         if(msg==null||"".equals(msg)){
             result.setMsg(REQUEST_SUCCESS);
         }else{
@@ -65,9 +64,6 @@ public class ResultUtil {
         }
         if(data==null||data.equals("")){
             result.setData("");
-        }else{
-            data = URLEncoder.encode(data,"UTF-8");
-            result.setData(data);
         }
         return  result;
     }
@@ -116,7 +112,7 @@ public class ResultUtil {
      * 请求失败
      * @return
      */
-    public static  Result requestFailed(String data,String msg,String code){
+    public static  Result requestFailed(Object data,String msg,String code){
         Result result = new Result();
         if(data==null||"".equals(data)){
             result.setData(null);

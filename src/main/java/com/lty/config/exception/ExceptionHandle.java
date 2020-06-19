@@ -1,6 +1,6 @@
 package com.lty.config.exception;
 
-import com.lty.entity.Result;
+import com.lty.entity.system.Result;
 import com.lty.config.util.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +30,7 @@ public class ExceptionHandle {
             if(myException.getData()==null||"".equals(myException.getData())){
                 myException.setData(myException.getMessage());
             }
-            return ResultUtil.requestSuccess(myException.getData(),myException.getMessage(),myException.getCode());
+            return ResultUtil.requestFailed(myException.getData(),myException.getMessage(),myException.getCode());
         }
         logger.error(e.getMessage()+"(异常)",e);  //这里必须是logger.error(str1,str2),需要在
         e.printStackTrace();
